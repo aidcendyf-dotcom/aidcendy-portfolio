@@ -1,2 +1,0 @@
-# aidcendy-portfolio
-portfolio
