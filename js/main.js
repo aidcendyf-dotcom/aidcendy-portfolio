@@ -44,7 +44,7 @@ addEventListener('keydown',e=>{if(e.key==='Escape')close();if(e.key==='t'&&!e.me
 $$('.btn').forEach(b=>b.addEventListener('pointerdown',e=>{if(RM)return;const r=b.getBoundingClientRect(),s=document.createElement('span');s.className='rp';s.style.left=e.clientX-r.left+'px';s.style.top=e.clientY-r.top+'px';b.append(s);s.onanimationend=()=>s.remove()}));
 if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!RM){
 const track=(el,move,reset)=>{el.addEventListener('pointermove',e=>move(e,el.getBoundingClientRect()));el.addEventListener('pointerleave',reset)};
-$$('.sk li').forEach(c=>track(c,(e,r)=>{c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')},()=>{}));
+$$('.sk li,.pc').forEach(c=>track(c,(e,r)=>{c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')},()=>{}));
 const pt=$('.pt'),fr=$('.fr'),tilt=(x,y)=>{fr.style.setProperty('--ry',x+'deg');fr.style.setProperty('--rx',y+'deg')};
 track(pt,(e,r)=>tilt(((e.clientX-r.left)/r.width-.5)*10,-((e.clientY-r.top)/r.height-.5)*10),()=>tilt(0,0));
 $$('.btn.pri').forEach(b=>{const set=(x,y)=>{b.style.setProperty('--tx',x+'px');b.style.setProperty('--ty',y+'px')};track(b,(e,r)=>set((e.clientX-r.left-r.width/2)*.18,(e.clientY-r.top-r.height/2)*.28),()=>set(0,0))});
