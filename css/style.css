@@ -145,3 +145,27 @@ nav a:hover{transform:translateY(-1px)}nav a:active{transform:scale(.94);transit
 .mg span{padding-left:1.4rem;font:600 clamp(1rem,2vw,1.35rem) var(--fd);letter-spacing:-.02em;color:var(--mu);white-space:nowrap}
 .mg span::after{content:"\2726";margin-left:1.4rem;color:var(--ac);font-size:.7em}
 @keyframes mq{to{translate:-50% 0}}
+
+/* projects */
+.pj{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.6rem,1.5vw,1rem)}
+.pj>li{display:flex}
+.pc{position:relative;isolation:isolate;display:flex;flex-direction:column;gap:.5rem;width:100%;padding:.9rem .9rem 1.3rem;border:1px solid var(--bd);border-radius:20px;background:var(--gl);will-change:transform}
+.pc>h3,.pc>p,.pc>.chips,.pc>.vw{margin-inline:.4rem}
+.pc:hover,.pc:focus-visible{transform:translateY(-4px) scale(1.015);border-color:var(--ac);box-shadow:0 0 0 1px var(--ac),0 14px 30px -14px var(--glow)}
+.pc::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:radial-gradient(220px circle at var(--mx,50%) var(--my,0%),var(--glow),transparent 70%);opacity:0;transition:opacity .2s;pointer-events:none}
+.pc:hover::before{opacity:1}
+.pc h3{font-size:1.25rem}.pc p{font-size:.95rem;color:var(--mu);line-height:1.55}
+.pth{position:relative;aspect-ratio:16/10;margin-bottom:.5rem;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,var(--a),var(--b))}
+.pth::before,.pth::after{content:"";position:absolute;inset:16% 24%;border-radius:12px;transition:transform .28s var(--ease)}
+.pth::before{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35)}
+.pth::after{background:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)) 14px 14px/38% 7px no-repeat,linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)) 14px 32px/64% 5px no-repeat,linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)) 14px 46px/52% 5px no-repeat,linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.3)) 14px calc(100% - 14px)/30% 18px no-repeat}
+.pc:hover .pth::before,.pc:hover .pth::after{transform:scale(1.06)}
+.pth b{position:absolute;left:.9rem;bottom:.55rem;font:700 1.6rem/1 var(--fd);letter-spacing:-.04em;color:#fff;opacity:.92}
+.go{position:absolute;top:.7rem;right:.7rem;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.18);color:#fff;transition:translate .2s var(--ease),background-color .2s,color .2s}
+.pc:hover .go{translate:3px -3px;background:#fff;color:var(--b)}
+.vw{display:inline-flex;align-items:center;gap:.35rem;margin-top:.9rem;font:600 .92rem var(--fd);color:var(--ac)}
+.vw svg{transition:translate .2s var(--ease)}.pc:hover .vw svg{translate:2px -2px}
+@media(max-width:860px){.pj{grid-template-columns:1fr}.pth{aspect-ratio:16/7}}
+@media(max-width:560px){.pth{aspect-ratio:16/9}}
+/* five links need a slimmer floating nav on very small phones */
+@media(max-width:420px){nav a{padding:.5rem .62rem;font-size:.8rem}}
